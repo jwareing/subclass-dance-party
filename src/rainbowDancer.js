@@ -7,4 +7,4 @@ MakeRainbowDancer.prototype.oldStep = MakeDancer.prototype.step;
 MakeRainbowDancer.prototype.step = function(){
   this.oldStep();
     this.$node.css('border','10px solid ' + this.randomColor());
-}
+};
