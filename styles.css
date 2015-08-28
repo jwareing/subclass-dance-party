@@ -4,6 +4,9 @@ body, html{
 body{
   margin: 0px;
   background-color:#444;
+  background-image: url('lib/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -20,9 +23,28 @@ body, a:link, a:visited, a:active{
 .title{
   background-color: #777;
 }
-.dancer{
-  /*border:10px solid blue;
-  border-radius:10px;*/
+.dancer, .dancerimage{
+  border:10px;
+  border-radius:10px;
   position:absolute;
-  background-image: url('lib/spaceinvader.jpeg')
 }
+
+.dancerimage{
+  max-height: 40px;
+  position: relative;
+
+}
+
+.movingdancerimage{
+  max-height: 40px;
+  position: relative;
+
+}
+
+.explodingdancerimage{
+  max-height: 60px;
+  position: relative;
+
+}
+
+

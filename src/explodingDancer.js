@@ -1,10 +1,14 @@
 var MakeExplodingDancer = function(top, left, timeBetweenSteps){
-  MakeBlinkyDancer.apply(this,arguments);
-  this.$node.css('background-image');
+  MakeDancer.call(this,top,left,1);
+  //this.$node = $('<span class="dancer"><img class="explodingdancerimage" src ="lib/deathstar.ico"></img></span>');
+  this.setPosition(top, left);
+  // this.$node.$('img').css('max-height', '' + Math.random()*1000+'px');
+  $('<img class="explodingdancerimage" src ="lib/deathstar.ico"></img>').css('max-height','' + Math.random()*256+'px').appendTo(this.$node);
 };
-MakeExplodingDancer.prototype = Object.create(MakeBlinkyDancer.prototype);
+MakeExplodingDancer.prototype = Object.create(MakeDancer.prototype);
 MakeExplodingDancer.prototype.constructor = MakeExplodingDancer;
-MakeExplodingDancer.prototype.step = function() {
+MakeExplodingDancer.prototype.oldStep = MakeDancer.prototype.step;
+MakeExplodingDancer.prototype.step = function(){
   this.oldStep();
 
   var topDanger = this.y()-(this.$node.outerHeight(true)/2);
@@ -19,9 +23,10 @@ MakeExplodingDancer.prototype.step = function() {
     var x = $(this).position().left;
     var y = $(this).position().top;
 
-    if (x!== context.$node.position().left){
+    if (x!== context.$node.position().left || y!== context.$node.position().top){
       if(leftDanger<x && rightDanger>x && topDanger<y && bottomDanger>y){
         //points to john if it dont work
+
         $(this).remove();
         context.$node.remove();
       }

@@ -1,6 +1,6 @@
 var MakeDancer = function(top, left, timeBetweenSteps){
   // this = Object.create(MakeDancer.prototype)
-  this.$node = $('<span class="dancer"><img src ="lib/spaceinvader.jpeg"></img></span>');
+  this.$node = $('<span class="dancer"></span>');  
   this.timeBetweenSteps = timeBetweenSteps;
   this.setPosition(top,left);
   this.step();
@@ -30,7 +30,7 @@ MakeDancer.prototype.randomColor = function(lor) {
 
 MakeDancer.prototype.lineUpLeft = function(){
   this.$node.stop();
-  this.setPosition(($("body").height()-100) * Math.random(), 30);
+  this.setPosition(($("body").height()-100) * Math.random(), 200);
 };
 
 MakeDancer.prototype.y = function(){return this.$node.position().top;};

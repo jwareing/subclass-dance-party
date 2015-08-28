@@ -1,5 +1,6 @@
 var MakeRainbowDancer = function(top, left, timeBetweenSteps){
   MakeDancer.apply(this,arguments);
+  $('<img class="dancerimage" src ="lib/spaceinvader.png"></img>').appendTo(this.$node);
 };
 MakeRainbowDancer.prototype = Object.create(MakeDancer.prototype);
 MakeRainbowDancer.prototype.constructor = MakeRainbowDancer;
